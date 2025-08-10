@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import HeroBG from "../assets/images/hero-bg.jpg";
-// import Logo from "../assets/logos/logo.png";
+import Logo from "../assets/logos/logo.png";
 
 const Hero = () => {
   return (
@@ -24,14 +24,14 @@ const Hero = () => {
         className="relative z-10 container mx-auto px-6 text-center md:text-left flex flex-col items-center md:items-start"
       >
         {/* Logo */}
-        {/* <Motion.img
+        <Motion.img
           src={Logo}
           alt="T-Jas Trucking Logo"
           className="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-        /> */}
+        />
 
         <Motion.h1
           className="text-4xl md:text-6xl font-heading font-bold text-white mb-4"
