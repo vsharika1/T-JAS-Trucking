@@ -54,7 +54,7 @@ const Contact = () => {
               <MapPin size={26} />
             </div>
             <h3 className="font-heading text-xl text-black font-bold mb-3">Office Address</h3>
-            <p className="text-grayText font-body">123 Logistics Lane, Surrey, BC V3T 1X1<br />Canada</p>
+            <p className="text-grayText font-body">5404 7 Ave SW, Edmonton, AB, T6X 2K4<br />Canada</p>
           </Motion.div>
 
           {/* Card 3 */}
