@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-import { Mail, MapPin, Clock } from 'lucide-react';
+import { Mail, MapPin, Clock, User, Phone } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -21,30 +21,55 @@ const Contact = () => {
           </p>
         </Motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8">
+          <div className="flex flex-col gap-8">
+            {/* Card 1: Contact Information (with Name) */}
+            <Motion.div
+              className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 text-left flex flex-col justify-between space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="mb-5 flex items-start justify-start">
+                <Mail size={26} />
+              </div>
+              <h3 className="font-heading text-xl text-black font-bold mb-4">Contact Information</h3>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-grayText font-body">
+                  <User size={20} className="text-primary" />
+                  <span>Harpuneet Singh Gill (Harp)</span>
+                </div>
+                <div className="flex items-center gap-2 text-grayText font-body">
+                  <Mail size={20} className="text-primary" />
+                  <a href="mailto:tejas1722199@yahoo.com" className="text-primary hover:underline">tejas1722199@yahoo.com</a>
+                </div>
+                <div className="flex items-center gap-2 text-grayText font-body">
+                  <Phone size={20} className="text-primary" />
+                  <a href="tel:+15878790500" className="text-primary hover:underline">+1 (587) 879-0500</a>
+                </div>
+              </div>
+            </Motion.div>
+            {/* Card 3: Working Hours */}
+            <Motion.div
+              className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 text-left flex flex-col justify-between space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="mb-5 flex items-start justify-start">
+                <Clock size={26} />
+              </div>
+              <h3 className="font-heading text-xl text-black font-bold mb-4">Working Hours</h3>
+              <div className="space-y-2">
+                <p className="text-grayText font-body">Mon – Fri: 8am – 6pm<br />Sat: 9am – 2pm</p>
+              </div>
+            </Motion.div>
+          </div>
+          {/* Card 2: Office Address */}
           <Motion.div
-            className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 text-left flex flex-col items-start"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <div className="mb-5 flex items-start justify-start">
-              <Mail size={26} />
-            </div>
-            <h3 className="font-heading text-xl text-black font-bold mb-3">Contact Information</h3>
-            <p className="text-grayText font-body mb-1">
-              Email: <a href="mailto:tejas1722199@yahoo.com" className="text-primary hover:underline">tejas1722199@yahoo.com</a>
-            </p>
-            <p className="text-grayText font-body">
-              Phone: <a href="tel:+15878790500" className="text-primary hover:underline">+1 (587) 879-0500</a>
-            </p>
-          </Motion.div>
-
-          {/* Card 2 */}
-          <Motion.div
-            className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 text-left flex flex-col items-start"
+            className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 text-left flex flex-col justify-between space-y-4 flex-1"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -53,23 +78,21 @@ const Contact = () => {
             <div className="mb-5 flex items-start justify-start">
               <MapPin size={26} />
             </div>
-            <h3 className="font-heading text-xl text-black font-bold mb-3">Office Address</h3>
-            <p className="text-grayText font-body">5404 7 Ave SW, Edmonton, AB, T6X 2K4<br />Canada</p>
-          </Motion.div>
-
-          {/* Card 3 */}
-          <Motion.div
-            className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 text-left flex flex-col items-start"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <div className="mb-5 flex items-start justify-start">
-              <Clock size={26} />
+            <h3 className="font-heading text-xl text-black font-bold mb-4">Office Address</h3>
+            <div className="space-y-2">
+              <p className="text-grayText font-body">
+                5404 7 Ave SW, Edmonton, AB, T6X 2K4, Canada
+              </p>
+              <iframe
+                title="Google Maps Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24049.368749075986!2d-113.41460769999999!3d53.4275686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01b47be1f0e0d%3A0x3ae5a9ad0545c45b!2s5404%207%20Ave%20SW%2C%20Edmonton%2C%20AB%20T6X%202K4%2C%20Canada!5e0!3m2!1sen!2sca!4v1724380000000"
+                width="100%"
+                height="280"
+                allowFullScreen=""
+                loading="lazy"
+                className="rounded-lg border border-gray-200 mt-auto"
+              />
             </div>
-            <h3 className="font-heading text-xl text-black font-bold mb-3">Working Hours</h3>
-            <p className="text-grayText font-body">Mon – Fri: 8am – 6pm<br />Sat: 9am – 2pm</p>
           </Motion.div>
         </div>
       </div>
