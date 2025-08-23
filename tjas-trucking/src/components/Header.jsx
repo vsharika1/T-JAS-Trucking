@@ -13,9 +13,9 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white sticky top-0 z-50 shadow-md">
-      <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        <span className="text-2xl font-bold uppercase tracking-widest text-primary font-heading">
+    <header className="sticky top-0 w-full z-50 backdrop-blur-md bg-black/60 border-b border-white/10">
+      <div className="container mx-auto flex items-center justify-between px-6 py-3">
+        <span className="text-3xl font-extrabold uppercase tracking-widest text-white font-heading">
           T-JAS Trucking
         </span>
 
@@ -27,7 +27,7 @@ const Header = () => {
               href={link.href}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="hover:text-primary transition-colors duration-200 font-bold px-2 py-1 rounded"
+              className="text-white hover:text-primary transition-colors duration-200 font-bold px-2 py-1 rounded"
             >
               {link.name}
             </Motion.a>
@@ -38,6 +38,7 @@ const Header = () => {
         <button
           className="md:hidden focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Mobile Navigation"
         >
           <span className="text-xl">&#9776;</span>
         </button>
@@ -48,14 +49,14 @@ const Header = () => {
         <Motion.div
           initial={{ height: 0 }}
           animate={{ height: "auto" }}
-          className="md:hidden bg-black px-4 pb-4"
+          className="md:hidden bg-black/80 backdrop-blur-md px-4 pb-4 rounded-b-xl shadow"
         >
           <div className="flex flex-col space-y-4 font-heading text-sm uppercase tracking-wide">
             {navLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="hover:text-primary transition-colors duration-200 font-bold px-2 py-1 rounded"
+                className="text-white hover:text-primary transition-colors duration-200 font-bold px-2 py-1 rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
