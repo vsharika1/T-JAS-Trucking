@@ -63,7 +63,7 @@ const Contact = () => {
               </div>
               <h3 className="font-heading text-xl text-black font-bold mb-4">Working Hours</h3>
               <div className="space-y-2">
-                <p className="text-grayText font-body">Mon – Fri: 8am – 6pm<br />Sat: 9am – 2pm</p>
+                <p className="text-grayText font-body">Open 24/7</p>
               </div>
             </Motion.div>
           </div>
@@ -81,11 +81,11 @@ const Contact = () => {
             <h3 className="font-heading text-xl text-black font-bold mb-4">Office Address</h3>
             <div className="space-y-2">
               <p className="text-grayText font-body">
-                5404 7 Ave SW, Edmonton, AB, T6X 2K4, Canada
+                2915 Ellwood Dr SW, Edmonton, AB, T6X 0A9, Canada
               </p>
               <iframe
                 title="Google Maps Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24049.368749075986!2d-113.41460769999999!3d53.4275686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01b47be1f0e0d%3A0x3ae5a9ad0545c45b!2s5404%207%20Ave%20SW%2C%20Edmonton%2C%20AB%20T6X%202K4%2C%20Canada!5e0!3m2!1sen!2sca!4v1724380000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24049.535363445547!2d-113.42170719999999!3d53.4258926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01b88a2836ee7%3A0x123456789abcdef0!2s2915%20Ellwood%20Dr%20SW%2C%20Edmonton%2C%20AB%20T6X%200A9%2C%20Canada!5e0!3m2!1sen!2sca!4v1724430000000"
                 width="100%"
                 height="280"
                 allowFullScreen=""

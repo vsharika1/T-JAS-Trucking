@@ -40,7 +40,7 @@ const Header = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Mobile Navigation"
         >
-          <span className="text-xl">&#9776;</span>
+          <span className="text-3xl text-white">&#9776;</span>
         </button>
       </div>
 
@@ -49,7 +49,7 @@ const Header = () => {
         <Motion.div
           initial={{ height: 0 }}
           animate={{ height: "auto" }}
-          className="md:hidden bg-black/80 backdrop-blur-md px-4 pb-4 rounded-b-xl shadow"
+          className="md:hidden bg-gray backdrop-blur-xs px-4 py-4 shadow"
         >
           <div className="flex flex-col space-y-4 font-heading text-sm uppercase tracking-wide">
             {navLinks.map((link, index) => (

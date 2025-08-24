@@ -21,20 +21,23 @@ const Hero = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 container mx-auto px-6 py-10 text-center md:text-left flex flex-col items-center md:items-start"
+        className="absolute top-5 bottom-5 left-5 right-5 z-10 p-10 text-center flex flex-col justify-center items-center backdrop-blur-xs bg-white/10 rounded-xl shadow-xl"
       >
         {/* Logo */}
         <Motion.img
           src={Logo}
           alt="T-Jas Trucking Logo"
-          className="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6"
+          className="w-44 h-44 sm:w-48 sm:h-48 rounded-full border-4 border-white shadow-lg mb-6"
+          aria-hidden="true"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         />
 
         <Motion.h1
-          className="text-4xl md:text-6xl font-heading font-bold text-white mb-4"
+          role="heading"
+          aria-level="1"
+          className="text-3xl sm:text-5xl md:text-6xl font-heading font-bold text-white mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
@@ -43,7 +46,7 @@ const Hero = () => {
         </Motion.h1>
 
         <Motion.p
-          className="text-lg md:text-xl font-body text-white mb-6 max-w-xl"
+          className="text-base sm:text-lg md:text-xl font-body text-white mb-8 max-w-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
@@ -53,7 +56,8 @@ const Hero = () => {
 
         <Motion.a
           href="#contact"
-          className="inline-block bg-amber-300 text-black font-bold py-3 px-8 rounded-full border border-white shadow-lg hover:bg-amber-400 hover:text-black hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
+          className="inline-block bg-amber-300 text-black font-bold py-3.5 px-10 rounded-full border border-white shadow-lg hover:bg-amber-400 hover:text-black hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-amber-400"
+          aria-label="Get a freight quote"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
