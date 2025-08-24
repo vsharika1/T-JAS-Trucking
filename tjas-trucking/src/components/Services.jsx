@@ -1,37 +1,58 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-import { Truck, Globe, Snowflake, Layers, Clock, Shield } from 'lucide-react';
+import { Truck, Globe, Snowflake, Layers, Clock, Shield, Briefcase, Trash2, Archive, HardHat } from 'lucide-react';
 
-const services = [
+// Grouped services
+const serviceGroups = [
   {
-    title: "Long-Haul Trucking",
-    description: "Reliable coast-to-coast freight transport across North America.",
-    icon: <Truck size={36} className="text-primary" />,
+    group: "Core Freight Services",
+    items: [
+      {
+        title: "Long-Haul Trucking",
+        description: "Reliable coast-to-coast freight transport across North America.",
+        icon: <Truck size={36} className="text-primary" />,
+      },
+      {
+        title: "Regional Delivery",
+        description: "Efficient local and regional delivery with flexible scheduling.",
+        icon: <Clock size={36} className="text-primary" />,
+      },
+      {
+        title: "Temperature-Controlled Shipping",
+        description: "Specialized trucks to maintain sensitive goods at stable temps.",
+        icon: <Snowflake size={36} className="text-primary" />,
+      },
+    ],
   },
   {
-    title: "Regional Delivery",
-    description: "Efficient local and regional delivery with flexible scheduling.",
-    icon: <Clock size={36} className="text-primary" />,
-  },
-  {
-    title: "Freight Management",
-    description: "Streamlined logistics planning and cargo coordination.",
-    icon: <Layers size={36} className="text-primary" />,
-  },
-  {
-    title: "Temperature-Controlled Shipping",
-    description: "Specialized trucks to maintain sensitive goods at stable temps.",
-    icon: <Snowflake size={36} className="text-primary" />,
-  },
-  {
-    title: "Cross-Border Expertise",
-    description: "Customs-ready operations for smooth international transport.",
-    icon: <Globe size={36} className="text-primary" />,
-  },
-  {
-    title: "Safety & Compliance",
-    description: "Strict adherence to transport regulations and safety protocols.",
-    icon: <Shield size={36} className="text-primary" />,
+    group: "Specialized Hauling Services",
+    items: [
+      {
+        title: "Company Services",
+        description: "Specialized company-specific hauling and logistics services.",
+        icon: <Briefcase size={36} className="text-primary" />,
+      },
+      {
+        title: "Contaminated Soil",
+        description: "Safe and compliant transportation of contaminated soil.",
+        icon: <Trash2 size={36} className="text-primary" />,
+      },
+      {
+        title: "End Dumps",
+        description: "Efficient end dump hauling for bulk materials and debris.",
+        icon: <Archive size={36} className="text-primary" />,
+      },
+      {
+        title: "Haul Gravel",
+        description: "Reliable gravel hauling for construction and landscaping.",
+        icon: <Archive size={36} className="text-primary" />,
+      },
+      {
+        title: "Heavy Trucks",
+        description: "Heavy-duty trucks for oversized and demanding loads.",
+        icon: <HardHat size={36} className="text-primary" />,
+      },
+    ],
   },
 ];
 
@@ -39,7 +60,8 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative bg-neutral py-20 px-6 md:px-12 overflow-hidden"
+      className="relative bg-neutral py-20 px-4 sm:px-6 md:px-12 overflow-hidden"
+      aria-label="Our Services"
     >
       {/* Background effect */}
       <div
@@ -58,31 +80,35 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map((service, index) => (
-            <Motion.div
-              key={index}
-              className="group relative bg-white/90 p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-xl hover:scale-[1.04] transition-all duration-300 cursor-pointer flex flex-col"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="mb-5 flex items-start justify-start">
-                {service.icon}
-              </div>
-              <h3 className="text-2xl font-heading font-bold text-black mb-3 tracking-tight group-hover:text-primary transition">
-                {service.title}
-              </h3>
-              <p className="text-grayText font-body text-base leading-relaxed">
-                {service.description}
-              </p>
-            </Motion.div>
-          ))}
-        </div>
+        {serviceGroups.map((section, sectionIndex) => (
+          <div
+            key={sectionIndex}
+            className={`mb-12 last:mb-0`}
+            aria-label={section.group}
+          >
+            <h3 className="text-2xl font-bold text-primary mb-6">{section.group}</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {section.items.map((service, index) => (
+                <Motion.div
+                  key={index}
+                  className="group bg-white/90 p-6 rounded-xl border border-gray-200 shadow hover:shadow-lg transition flex flex-col"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  aria-label={service.title}
+                >
+                  <div className="mb-4">{service.icon}</div>
+                  <h4 className="text-xl font-semibold mb-2">{service.title}</h4>
+                  <p className="text-sm text-gray-600">{service.description}</p>
+                </Motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
+}
 
 export default Services;
