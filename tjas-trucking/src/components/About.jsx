@@ -2,89 +2,105 @@ import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import { Layers, Globe, Shield, Truck } from 'lucide-react';
 
+const highlights = [
+  {
+    title: 'Smart Freight Coordination',
+    description: 'Streamlined planning, clear routing, and proactive updates.',
+    icon: Layers,
+  },
+  {
+    title: 'International-Ready Logistics',
+    description: 'Customs-aware operations for cross-border reliability.',
+    icon: Globe,
+  },
+  {
+    title: 'Compliance & Safety First',
+    description: 'Strict adherence to transport regulations and protocols.',
+    icon: Shield,
+  },
+  {
+    title: 'Versatile Equipment',
+    description: 'Modern fleet options for specialized hauling.',
+    icon: Truck,
+  },
+];
+
+const stats = [
+  { label: 'Years of Experience', value: '10+' },
+  { label: 'On-Time Delivery Rate', value: '99%' },
+  { label: 'Customer Support', value: '24/7' },
+];
+
 const About = () => {
   return (
-    <section id="about" className="bg-white py-20 px-6 md:px-12">
-      <div className="container mx-auto max-w-6xl">
-        <Motion.div
-          className="text-center md:text-left mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-black mb-6">
-            About T-Jas Trucking
-          </h2>
-          <p className="text-grayText font-body text-lg md:text-xl leading-relaxed mx-auto md:mx-0">
-            T-Jas Trucking is built on a foundation of reliability, safety, and on-time delivery.
-            With years of experience in long-haul and regional transportation, our dedicated team ensures your freight moves efficiently and securely across North America.
-            We are committed to offering professional service and strong customer relationships every mile of the journey.
-          </p>
+    <section id="about" className="bg-paper py-24 px-6 border-t border-line">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <Motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-xs uppercase tracking-[0.4em] text-muted">
+              About
+            </p>
+            <h2 className="section-title font-display text-4xl md:text-5xl text-ink">
+              Logistics built for calm, consistent delivery.
+            </h2>
+            <p className="text-muted text-base md:text-lg leading-relaxed">
+              T-Jas Trucking is built on reliability, safety, and on-time
+              performance. We coordinate long-haul and regional freight with a
+              disciplined team and a modern fleet, ensuring your cargo arrives
+              with clarity at every handoff.
+            </p>
+            <div className="border-t border-line pt-6 text-sm uppercase tracking-[0.3em] text-muted">
+              Serving North America with precision and care.
+            </div>
+          </Motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 text-left">
-            <div className="flex items-start space-x-4">
-              <div className="text-primary"><Layers size={24} className="text-primary" /></div>
-              <div>
-                <h4 className="font-semibold text-lg">Smart Freight Coordination</h4>
-                <p className="text-grayText">Streamlined logistics planning and cargo coordination.</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <div className="text-primary"><Globe size={24} className="text-primary" /></div>
-              <div>
-                <h4 className="font-semibold text-lg">Seamless International Logistics</h4>
-                <p className="text-grayText">Customs-ready operations for smooth international transport.</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <div className="text-primary"><Shield size={24} className="text-primary" /></div>
-              <div>
-                <h4 className="font-semibold text-lg">Trusted Compliance &amp; Safety</h4>
-                <p className="text-grayText">Strict adherence to transport regulations and safety protocols.</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <div className="text-primary"><Truck size={24} className="text-primary" /></div>
-              <div>
-                <h4 className="font-semibold text-lg">Customized Trucking Solutions</h4>
-                <p className="text-grayText">Comprehensive trucking solutions tailored for all industries.</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <div className="text-primary"><Truck size={24} className="text-primary" /></div>
-              <div>
-                <h4 className="font-semibold text-lg">Modern Truck Fleet</h4>
-                <p className="text-grayText">Modern fleet of trucks equipped for every freight need.</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <div className="text-primary"><Truck size={24} className="text-primary" /></div>
-              <div>
-                <h4 className="font-semibold text-lg">Versatile Equipment Options</h4>
-                <p className="text-grayText">Diverse range of trucks and trailers for versatile hauling.</p>
-              </div>
-            </div>
+          <div className="grid gap-6">
+            {highlights.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <Motion.div
+                  key={item.title}
+                  className="flex gap-4 border border-line bg-surface/90 p-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="mt-1 rounded-full border border-line bg-paper p-2 text-accent">
+                    <Icon size={20} />
+                  </div>
+                  <div>
+                    <h4 className="font-display text-xl text-ink">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-muted">{item.description}</p>
+                  </div>
+                </Motion.div>
+              );
+            })}
           </div>
-        </Motion.div>
+        </div>
 
-        {/* Enhanced Icon Grid / Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {[
-            { label: 'Years of Experience', value: '10+' },
-            { label: 'On-Time Delivery Rate', value: '99%' },
-            { label: 'Customer Support', value: '24/7' },
-          ].map((item, index) => (
+        <div className="mt-16 grid gap-6 border-t border-line pt-10 md:grid-cols-3">
+          {stats.map((item, index) => (
             <Motion.div
-              key={index}
-              className="bg-neutral rounded-lg p-8 shadow hover:shadow-lg transition-shadow duration-300"
-              initial={{ opacity: 0, y: 30 }}
+              key={item.label}
+              className="flex flex-col gap-2"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
+              transition={{ delay: index * 0.15, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-primary text-5xl font-extrabold mb-3">{item.value}</h3>
-              <p className="text-grayText font-body text-lg">{item.label}</p>
+              <p className="font-display text-4xl text-ink">{item.value}</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-muted">
+                {item.label}
+              </p>
             </Motion.div>
           ))}
         </div>

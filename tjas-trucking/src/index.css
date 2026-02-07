@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Space Grotesk", sans-serif;
+
+  --color-ink: #0f1214;
+  --color-muted: #5b6066;
+  --color-paper: #f7f6f2;
+  --color-surface: #ffffff;
+  --color-line: #e6e2da;
+  --color-accent: #b7a47a;
+  --color-accent-strong: #9f875b;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    letter-spacing: 0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .section-title {
+    text-wrap: balance;
+  }
+}

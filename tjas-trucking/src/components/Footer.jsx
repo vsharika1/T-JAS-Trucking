@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-import { Mail, Phone, Facebook, Instagram, Linkedin, User } from 'lucide-react';
+import { Mail, Phone, User } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -11,46 +11,43 @@ const Footer = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="bg-gradient-to-b from-black via-gray-900 to-black text-white py-16 px-6 border-t border-gray-800"
+      className="bg-ink text-paper py-16 px-6"
     >
-      <div className="container mx-auto max-w-6xl space-y-12">
-        {/* Top section */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-10 sm:gap-14 md:gap-20">
-          <div className="space-y-3">
-            <p className="font-heading text-3xl tracking-widest text-primary">
-              T-Jas Trucking
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.45em] text-paper/60">
+              T-JAS Trucking
             </p>
-            <p className="text-sm font-body text-gray-400 max-w-sm">
-              Reliable Freight Solutions. Proudly serving across North America with dedication, precision, and speed.
+            <p className="font-display text-3xl text-paper">
+              Reliable freight with refined execution.
             </p>
-            {/* <div className="flex space-x-4 pt-4 text-primary">
-              <a href="#" aria-label="Facebook" className="hover:scale-110 transition-transform">
-                <Facebook size={20} />
-              </a>
-              <a href="#" aria-label="Instagram" className="hover:scale-110 transition-transform">
-                <Instagram size={20} />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
-                <Linkedin size={20} />
-              </a>
-            </div> */}
+            <p className="text-sm text-paper/60 max-w-sm">
+              Serving North America with dedicated fleets, disciplined routes,
+              and consistent communication.
+            </p>
           </div>
 
-          <div className="flex flex-col space-y-3 text-sm font-body text-primary">
-            <div className="flex items-center gap-2 font-semibold text-base text-white">
+          <div className="space-y-3 text-sm text-paper/70">
+            <div className="flex items-center gap-2 text-paper">
               <User size={18} /> Harpuneet Singh Gill (Harp)
             </div>
-            <a href="mailto:tejas1722199@yahoo.com" className="hover:underline flex items-center gap-2">
+            <a
+              href="mailto:tejas1722199@yahoo.com"
+              className="flex items-center gap-2 hover:text-accent"
+            >
               <Mail size={18} /> tejas1722199@yahoo.com
             </a>
-            <a href="tel:+15878790500" className="hover:underline flex items-center gap-2">
+            <a
+              href="tel:+15878790500"
+              className="flex items-center gap-2 hover:text-accent"
+            >
               <Phone size={18} /> +1 (587) 879-0500
             </a>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-gray-800 pt-6 text-center text-xs text-gray-500 font-body">
+        <div className="mt-12 border-t border-paper/20 pt-6 text-xs uppercase tracking-[0.35em] text-paper/50">
           &copy; {new Date().getFullYear()} T-Jas Trucking. All rights reserved.
         </div>
       </div>
